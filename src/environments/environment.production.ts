@@ -6,4 +6,10 @@ export const environment: Environment = {
   production: true,
   apiUrl: 'http://my-production-url',
   env: 'production',
+  apiKey: "AIzaSyB1a2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q",
+  authDomain: "my-project.firebaseapp.com",
+  projectId: "my-project-12345",
+  storageBucket: "my-project.appspot.com",
+  messagingSenderId: "123456789012",
+  appId: "1:123456789012:web:abc123def456"
 };
