@@ -7,6 +7,7 @@ import {ANGULAR_CLI_VERSION, APP_NAME, APP_VERSION} from './app-json-data';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import { TITLE } from './app.const';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ import {MatIconModule} from '@angular/material/icon';
 export class AppComponent {
 
   isSideNavOpen = signal(false);
+  title = TITLE;
   
   projectName = inject(APP_NAME);
   version = inject(APP_VERSION);

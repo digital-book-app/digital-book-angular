@@ -1,5 +1,9 @@
 <mat-drawer-container [hasBackdrop]="false" class="grow">
-  <mat-drawer #drawer mode="push" class="p-4 bg-[#abc1f2]! text-white! text-xl">Sidenav</mat-drawer>
+  <mat-drawer #drawer mode="push" class="p-4 bg-[#abc1f2]! text-white! text-xl">
+    <header>
+      <h1>{{title}}</h1>
+    </header>
+  </mat-drawer>
   <mat-drawer-content class="p-2">
     <header>
       <button matIconButton (click)="drawer.toggle()">
@@ -7,14 +11,14 @@
     </button>
     </header>
     <main class="p-3">
-      <h1>Main Content</h1> <br> <br>
+      <h2>DASHBOARD</h2> <br> <br>
 
-      <h2>APP INFO</h2>
-      <h3>{{ projectName | replaceDashes | titlecase }}</h3>
-      <h3>Version: {{ version }}</h3>
-      <h3>API: {{ apiURL }}</h3>
-      <h3>Environment: {{ env }}</h3>
-      <h3>Angular CLI Version: {{ angularCLIVersion }}</h3>
+      <h3>APP INFO</h3>
+      <h2>{{ projectName | replaceDashes | titlecase }}</h2>
+      <h2>Version: {{ version }}</h2>
+      <h2>API: {{ apiURL }}</h2>
+      <h2>Environment: {{ env }}</h2>
+      <h2>Angular CLI Version: {{ angularCLIVersion }}</h2>
     </main>
   </mat-drawer-content>
 </mat-drawer-container>
