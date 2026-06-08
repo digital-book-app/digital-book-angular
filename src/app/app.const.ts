@@ -1,1 +1,1 @@
-export const TITLE = ''
+export const TITLE = 'Digital Book'

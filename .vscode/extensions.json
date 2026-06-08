@@ -1,4 +1,19 @@
 {
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
-  "recommendations": ["angular.ng-template"]
+  "recommendations": [
+    "angular.ng-template",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode",
+    "johnpapa.angular2",
+    "ms-vscode.powershell",
+    "ms-vscode.vscode-speech",
+    "pkief.material-icon-theme",
+    "sonarsource.sonarlint-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "syler.sass-indented",
+    "wesbos.theme-cobalt2"
+  ]
 }

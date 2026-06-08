@@ -1,17 +1,19 @@
 <mat-drawer-container [hasBackdrop]="false" class="grow">
   <mat-drawer #drawer mode="push" class="p-4 bg-[#abc1f2]! text-white! text-xl">
     <header>
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
     </header>
   </mat-drawer>
   <mat-drawer-content class="p-2">
     <header>
       <button matIconButton (click)="drawer.toggle()">
-         <mat-icon>menu</mat-icon>
-    </button>
+        <mat-icon>menu</mat-icon>
+      </button>
     </header>
     <main class="p-3">
-      <h2>DASHBOARD</h2> <br> <br>
+      <h2>DASHBOARD</h2>
+      <br />
+      <br />
 
       <h3>APP INFO</h3>
       <h2>{{ projectName | replaceDashes | titlecase }}</h2>

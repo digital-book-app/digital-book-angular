@@ -44,6 +44,12 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
+As an alternative, you can run unit tests from the VS Code Run and Debug view. Use the `ng test` debug configuration to start Karma and open the browser debugger.
+
+## Running debug
+
+You can also use the VS Code Run and Debug view to debug the application. Use the `ng serve` debug configuration to start the app and attach Chrome for debugging.
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

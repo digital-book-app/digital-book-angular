@@ -1,0 +1,5 @@
+/* 
+  Required for Tailwind CSS IntelliSense (VS Code extension).
+  The build entry point is styles.scss, but the extension only supports .css files for v4 detection.
+*/
+@import "tailwindcss";
