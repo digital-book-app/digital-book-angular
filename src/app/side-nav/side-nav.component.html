@@ -1,0 +1,50 @@
+<nav class="grow flex flex-col gap-y-2">
+  <header class="h-12.5 flex justify-center items-center border-b">
+    <h1 class="text-xl uppercase">{{ title }}</h1>
+  </header>
+  <ul class="grow flex flex-col gap-y-2">
+    <li>
+      <a
+        class="p-2 rounded-none hover:bg-gray-500 focus:outline-indigo-300 w-full flex items-center gap-x-2"
+        routerLink="/"
+        routerLinkActive="bg-gray-400"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon
+          svgIcon="dashboard"
+          aria-hidden="false"
+          aria-label="Dashboard SVG icon"
+        />
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        class="p-2 rounded-none hover:bg-gray-500 focus:outline-indigo-300 w-full flex items-center gap-x-2"
+        routerLink="/project-details"
+        routerLinkActive="bg-gray-400"
+      >
+        <mat-icon
+          svgIcon="details"
+          aria-hidden="false"
+          aria-label="Details Project SVG icon"
+        />
+        Project Details
+      </a>
+    </li>
+    <li>
+      <a
+        class="p-2 rounded-none hover:bg-gray-500 focus:outline-indigo-300 w-full flex items-center gap-x-2"
+        routerLink="/note"
+        routerLinkActive="bg-gray-400"
+      >
+        <mat-icon
+          svgIcon="notes"
+          aria-hidden="false"
+          aria-label="Notes SVG icon"
+        />
+        Note
+      </a>
+    </li>
+  </ul>
+</nav>

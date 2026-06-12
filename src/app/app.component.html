@@ -1,26 +1,20 @@
 <mat-drawer-container [hasBackdrop]="false" class="grow">
-  <mat-drawer #drawer mode="push" class="p-4 bg-[#abc1f2]! text-white! text-xl">
-    <header>
-      <h1>{{ title }}</h1>
-    </header>
+  <mat-drawer
+    #drawer
+    [opened]="isSideNavOpen()"
+    mode="push"
+    class="text-xl"
+  >
+    <app-side-nav />
   </mat-drawer>
-  <mat-drawer-content class="p-2">
-    <header>
+  <mat-drawer-content>
+    <div class="border-b py-1 pl-3">
       <button matIconButton (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-    </header>
+    </div>
     <main class="p-3">
-      <h2>DASHBOARD</h2>
-      <br />
-      <br />
-
-      <h3>APP INFO</h3>
-      <h2>{{ projectName | replaceDashes | titlecase }}</h2>
-      <h2>Version: {{ version }}</h2>
-      <h2>API: {{ apiURL }}</h2>
-      <h2>Environment: {{ env }}</h2>
-      <h2>Angular CLI Version: {{ angularCLIVersion }}</h2>
+      <router-outlet />
     </main>
   </mat-drawer-content>
 </mat-drawer-container>

@@ -1,38 +1,35 @@
-import {Component, inject, signal} from '@angular/core';
-import {environment} from '../environments/environment';
-import {ReplaceDashesPipe} from './shared/pipes/replace-dashes.pipe';
-import { CommonModule, TitleCasePipe } from '@angular/common';
-import {ANGULAR_CLI_VERSION, APP_NAME, APP_VERSION} from './app-json-data';
+import { Component, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {MatButtonModule} from '@angular/material/button';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import { TITLE } from './app.const';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { RouterOutlet } from '@angular/router';
+import { IconService } from './shared/services/icon.service';
 
 @Component({
   selector: 'app-root',
   imports: [
-    ReplaceDashesPipe,
-    TitleCasePipe,
     CommonModule,
     MatSidenavModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    SideNavComponent,
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   host: {
-    class: 'flex h-screen'
-  }
+    class: 'flex h-screen',
+  },
 })
 export class AppComponent {
+  isSideNavOpen = signal(true);
 
-  isSideNavOpen = signal(false);
-  title = TITLE;
-  
-  projectName = inject(APP_NAME);
-  version = inject(APP_VERSION);
-  angularCLIVersion = inject(ANGULAR_CLI_VERSION);
-  apiURL = environment.apiUrl;
-  env = environment.env;
+  iconService = inject(IconService);
+
+  constructor() {
+    this.iconService.registerIconList();
+  }
 }

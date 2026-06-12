@@ -1,0 +1,13 @@
+@use "@angular/material" as mat;
+
+@mixin side-nav-config() {
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: #abc1f2,
+      container-text-color: #fff,
+      container-width: 220px,
+      container-shape: none,
+      container-elevation-shadow: #e2d8d8 2px 0px 5px 2px,
+    )
+  );
+}

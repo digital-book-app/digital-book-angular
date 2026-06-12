@@ -1,7 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
+@use "@angular/material" as mat;
+@use "assets/scss/material-overrides/index" as mat-over;
 @use "tailwindcss";
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -11,22 +11,26 @@
 @include mat.app-background();
 
 // Define the theme object.
-$digital-book-angular-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
-  ),
-  density: (
-    scale: 0,
+$digital-book-angular-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    density: (
+      scale: 0,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 :root {
   @include mat.all-component-themes($digital-book-angular-theme);
+  @include mat-over.side-nav-config;
+  @include mat-over.button-config;
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
@@ -37,5 +41,11 @@ $digital-book-angular-theme: mat.define-theme((
 // @include mat.color-variants-backwards-compatibility($theme);
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
