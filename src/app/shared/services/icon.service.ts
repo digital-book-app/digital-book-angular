@@ -27,6 +27,10 @@ export class IconService {
       name: 'notes',
       path: 'icon/notes.svg',
     },
+    {
+      name: 'logo',
+      path: 'icon/logo.svg',
+    },
   ];
 
   registerIconList() {
