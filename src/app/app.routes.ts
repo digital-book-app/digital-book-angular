@@ -7,15 +7,18 @@ export const routes: Routes = [
     {
         path: '',
         component: DashboardComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
+        title: 'Dashboard'
     },
     {
         path: 'project-details',
-        component: ProjectDetailsComponent
+        component: ProjectDetailsComponent,
+        title: 'Project Details'
     },
     {
         path: 'note',
-        component: NoteComponent
+        component: NoteComponent,
+        title: 'Note'
     },
     {
         path: '**',

@@ -26,7 +26,7 @@ describe('SideNavComponent', () => {
       'mat-drawer h1',
     ) as HTMLHeadingElement;
 
-    expect(component.title).toBe(TITLE);
+    expect(component.projectTitle).toBe(TITLE);
     expect(titleElement.textContent?.trim()).toBe(TITLE);
   });
 });

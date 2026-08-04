@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { RouterOutlet } from '@angular/router';
 import { IconService } from './shared/services/icon.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ import { IconService } from './shared/services/icon.service';
   },
 })
 export class AppComponent {
+  readonly title = inject(Title);
   isSideNavOpen = signal(true);
 
   iconService = inject(IconService);

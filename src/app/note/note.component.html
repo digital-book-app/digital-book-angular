@@ -1,1 +1,17 @@
-<h2>NOTE</h2>
+<section class="flex flex-wrap">
+  @for (note of notes(); track note.id) {
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ note.title }}</mat-card-title>
+            <mat-card-subtitle>{{ note.createdAt }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ note.categories.map(cat => cat.name).join(', ') }}</p>
+            <p>{{ note.tags.map(cat => cat.name).join(', ') }}</p>
+            <p>{{ note.isFavorite }}</p>
+            <p>{{ note.status }}</p>
+            <p>{{ note.permissions }}</p>
+        </mat-card-content>
+    </mat-card>
+  }
+</section>

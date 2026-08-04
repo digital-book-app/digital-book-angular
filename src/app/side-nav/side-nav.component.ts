@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TITLE } from '../app.const';
+import { TITLE as PROJECT_TITLE } from '../app.const';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -13,5 +13,6 @@ import { MatIconModule } from '@angular/material/icon';
   },
 })
 export class SideNavComponent {
-  title = TITLE;
+  projectTitle = PROJECT_TITLE;
+
 }
