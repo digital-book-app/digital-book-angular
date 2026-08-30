@@ -1,12 +1,10 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
+// For class name. If a name is to general we will add a after prefix: -dba (that stands for digital book angular).
+// Example grid -> grid-dba
+
 @use "@angular/material" as mat;
-@use "assets/scss/material-overrides/index" as mat-over;
+@use "assets/scss/index" as mat-over;
 @use "tailwindcss";
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.elevation-classes();
 @include mat.app-background();
 
@@ -31,15 +29,8 @@ $digital-book-angular-theme: mat.define-theme(
   @include mat.all-component-themes($digital-book-angular-theme);
   @include mat-over.side-nav-config;
   @include mat-over.button-config;
+  @include mat-over.breakpoints-css-vars;
 }
-
-// Comment out the line below if you want to use the pre-defined typography utility classes.
-// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
-// @include mat.typography-hierarchy($theme);
-
-// Comment out the line below if you want to use the deprecated `color` inputs.
-// @include mat.color-variants-backwards-compatibility($theme);
-/* You can add global styles to this file, and also import other style files */
 
 html,
 body {

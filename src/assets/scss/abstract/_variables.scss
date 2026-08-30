@@ -1,0 +1,14 @@
+// BREAKPOINTS
+$tiny: "tiny";
+$small: "small";
+$medium: "medium";
+$large: "large";
+$mega: "mega";
+
+$breakpoints: (
+  $tiny: 30em,
+  $small: 37.5em,
+  $medium: 50em,
+  $large: 75em,
+  $mega: 93.75em,
+);

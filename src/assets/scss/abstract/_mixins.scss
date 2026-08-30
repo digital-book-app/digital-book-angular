@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "./variables" as var;
+
+// MEDIA QUERY MANAGER
+
+// NOTE,
+// 16px = 1em (if default browser)
+@mixin respond($breakpoint) {
+  @media only screen and (max-width: map.get(var.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// Exposes $breakpoints as CSS variables so JS can read the same values via getComputedStyle().
+@mixin breakpoints-css-vars() {
+  @each $name, $value in var.$breakpoints {
+    --breakpoint-#{$name}: #{$value};
+  }
+}
