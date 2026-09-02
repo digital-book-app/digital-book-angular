@@ -1,5 +1,6 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 import { routes } from './app.routes';
 import {
@@ -16,5 +17,12 @@ export const appConfig: ApplicationConfig = {
     provideAppName(name),
     provideAppVersion(version),
     provideAngularCLIVersion(devDependencies['@angular/cli']),
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: {
+        duration: 6000,
+        horizontalPosition: 'end',
+      },
+    },
   ],
 };
