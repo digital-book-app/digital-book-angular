@@ -5,3 +5,10 @@ export interface SnackBarData {
   icon: string;
   matSnackBar: MatSnackBar;
 }
+
+export enum SnackBarPanelClass {
+  INFO = 'info',
+  WARNING = 'warning',
+  SUCCESS = 'success',
+  ERROR = 'error',
+}

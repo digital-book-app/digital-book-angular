@@ -6,7 +6,10 @@ import { MatChipsModule } from '@angular/material/chips';
 import { DatePipe } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../shared/components/snack-bar/snack-bar.component';
-import { SnackBarData } from '../shared/models/snack-bar-data.model';
+import {
+  SnackBarData,
+  SnackBarPanelClass,
+} from '../shared/models/snack-bar-data.model';
 
 @Component({
   selector: 'app-note',
@@ -41,6 +44,7 @@ export class NoteComponent implements OnInit {
 
           this.matSnackBar.openFromComponent(SnackBarComponent, {
             data: snackData,
+            panelClass: SnackBarPanelClass.ERROR,
           });
         },
       });

@@ -11,9 +11,15 @@
   }
 }
 
-// Exposes $breakpoints as CSS variables so JS can read the same values via getComputedStyle().
+// Exposes $breakpoints as CSS variables.
 @mixin breakpoints-css-vars() {
   @each $name, $value in var.$breakpoints {
     --breakpoint-#{$name}: #{$value};
+  }
+}
+
+@mixin snack-bar-css-vars() {
+  @each $name, $value in var.$snackBarColors {
+    --snack-bar-#{$name}: #{$value};
   }
 }

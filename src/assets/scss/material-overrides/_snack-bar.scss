@@ -1,0 +1,35 @@
+@use "@angular/material" as mat;
+
+@mixin snack-bar-config() {
+  .error {
+    @include mat.snack-bar-overrides(
+      (
+        container-color: var(--snack-bar-error),
+      )
+    );
+  }
+
+  .info {
+    @include mat.snack-bar-overrides(
+      (
+        container-color: var(--snack-bar-info),
+      )
+    );
+  }
+
+  .success {
+    @include mat.snack-bar-overrides(
+      (
+        container-color: var(--snack-bar-success),
+      )
+    );
+  }
+
+  .warning {
+    @include mat.snack-bar-overrides(
+      (
+        container-color: var(--snack-bar-warning),
+      )
+    );
+  }
+}

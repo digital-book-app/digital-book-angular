@@ -12,3 +12,16 @@ $breakpoints: (
   $large: 75em,
   $mega: 93.75em,
 );
+
+// SNACK BAR COLORS
+$info: "info";
+$warning: "warning";
+$error: "error";
+$success: "success";
+
+$snackBarColors: (
+  $info: #5e68ce,
+  $warning: #c6ef40,
+  $error: #ef3434,
+  $success: #044904,
+);
