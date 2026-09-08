@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.colorTheme": "Abyss",
+  "workbench.colorTheme": "Monokai",
 
   // File nesting in Explorer — groups component files together
   "explorer.fileNesting.enabled": true,
