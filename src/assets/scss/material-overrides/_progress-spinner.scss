@@ -1,0 +1,9 @@
+@use "@angular/material" as mat;
+
+@mixin progress-spinner-config() {
+  @include mat.progress-spinner-overrides(
+    (
+      active-indicator-color: #037803,
+    )
+  );
+}

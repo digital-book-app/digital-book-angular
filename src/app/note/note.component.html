@@ -1,35 +1,47 @@
-<section class="grid-dba gap-4 items-start grow">
-  @for (note of notes(); track note.id) {
-    <mat-card class="flex flex-col gap-4">
-      <mat-card-header>
-        <mat-card-title>{{ note.title }}</mat-card-title>
-        <mat-card-subtitle>{{
-          note.createdAt | date: "short"
-        }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content class="grow flex! flex-col gap-y-4">
-        <div class="flex gap-x-2">
-          @for (category of note.categories; track category.name) {
-            <mat-chip>{{ category.name }}</mat-chip>
-          }
-        </div>
-        <div class="flex gap-x-2">
-          @for (tag of note.tags; track tag.name) {
-            <mat-chip>{{ tag.name }}</mat-chip>
-          }
-        </div>
-        <p>{{ note.isFavorite }}</p>
-        <p>{{ note.status }}</p>
-        <p>{{ note.permissions }}</p>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button matButton>Open</button>
-        <button matButton>Edit</button>
-        <button matButton>Delete</button>
-      </mat-card-actions>
-    </mat-card>
-  }
-</section>
+@if (loading()) {
+  <div class="grow flex justify-center items-center">
+    <mat-spinner />
+  </div>
+} @else if (error()) {
+  <div class="grow flex flex-col justify-center items-center gap-y-8">
+    <mat-icon svgIcon="error" class="w-40! h-40! text-red-600!" />
+    <p class="text-red-600">An error happened</p>
+  </div>
+} @else {
+  <section class="grid-dba gap-4 items-start grow">
+    @for (note of notes(); track note.id) {
+      <mat-card class="flex flex-col gap-4">
+        <mat-card-header>
+          <mat-card-title>{{ note.title }}</mat-card-title>
+          <mat-card-subtitle>{{
+            note.createdAt | date: "short"
+          }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="grow flex! flex-col gap-y-4">
+          <div class="flex gap-x-2">
+            @for (category of note.categories; track category.name) {
+              <mat-chip>{{ category.name }}</mat-chip>
+            }
+          </div>
+          <div class="flex gap-x-2">
+            @for (tag of note.tags; track tag.name) {
+              <mat-chip>{{ tag.name }}</mat-chip>
+            }
+          </div>
+          <p>{{ note.isFavorite }}</p>
+          <p>{{ note.status }}</p>
+          <p>{{ note.permissions }}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button matButton>Open</button>
+          <button matButton>Edit</button>
+          <button matButton>Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </section>
+}
+
 <section class="flex justify-end">
-  <button matButton="filled">Add</button>
+  <button matButton="filled" [disabled]="loading() || error()">Add</button>
 </section>

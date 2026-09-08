@@ -30,6 +30,7 @@ $digital-book-angular-theme: mat.define-theme(
   @include mat-over.side-nav-config;
   @include mat-over.button-config;
   @include mat-over.snack-bar-config;
+  @include mat-over.progress-spinner-config;
   @include mat-over.breakpoints-css-vars;
   @include mat-over.snack-bar-css-vars;
 }

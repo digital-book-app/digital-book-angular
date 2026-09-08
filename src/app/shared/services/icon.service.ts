@@ -31,6 +31,10 @@ export class IconService {
       name: 'logo',
       path: 'icon/logo.svg',
     },
+    {
+      name: 'error',
+      path: 'icon/error.svg',
+    },
   ];
 
   registerIconList() {
