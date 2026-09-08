@@ -4,15 +4,20 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs';
 
-export type BreakpointName = 'tiny' | 'small' | 'medium' | 'large' | 'mega';
+export enum BreakpointCategory {
+  TINY = 'tiny',
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+  MEGA = 'mega',
+}
 
-// Mirrors $breakpoints in _variables.scss, used only as a fallback if the CSS variable isn't readable yet.
-const BREAKPOINT_FALLBACKS_EM: Record<BreakpointName, string> = {
-  tiny: '30em',
-  small: '37.5em',
-  medium: '50em',
-  large: '75em',
-  mega: '93.75em',
+const BREAKPOINT_FALLBACKS: Record<BreakpointCategory, string> = {
+  [BreakpointCategory.TINY]: '30em',
+  [BreakpointCategory.SMALL]: '37.5em',
+  [BreakpointCategory.MEDIUM]: '50em',
+  [BreakpointCategory.LARGE]: '75em',
+  [BreakpointCategory.MEGA]: '93.75em',
 };
 
 @Injectable({
@@ -22,7 +27,7 @@ export class BreakpointService {
   private readonly document = inject(DOCUMENT);
   private readonly breakpointObserver = inject(BreakpointObserver);
 
-  isBelowBreakpoint(name: BreakpointName) {
+  isBelowBreakpoint(name: BreakpointCategory) {
     return toSignal(
       this.breakpointObserver
         .observe(`(max-width: ${this.getBreakpointValue(name)})`)
@@ -31,10 +36,10 @@ export class BreakpointService {
     );
   }
 
-  private getBreakpointValue(name: BreakpointName): string {
+  private getBreakpointValue(name: BreakpointCategory): string {
     const value = getComputedStyle(this.document.documentElement)
       .getPropertyValue(`--breakpoint-${name}`)
       .trim();
-    return value || BREAKPOINT_FALLBACKS_EM[name];
+    return value || BREAKPOINT_FALLBACKS[name];
   }
 }

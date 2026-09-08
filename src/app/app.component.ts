@@ -2,19 +2,16 @@ import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDrawerMode, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { RouterOutlet } from '@angular/router';
 import { IconService } from './shared/services/icon.service';
 import {
   BreakpointService,
-  BreakpointName,
+  BreakpointCategory,
 } from './shared/services/breakpoint.service';
 import { Title } from '@angular/platform-browser';
-
-// Change this single value to switch which breakpoint drives the responsive sidenav.
-const RESPONSIVE_BREAKPOINT: BreakpointName = 'medium';
 
 @Component({
   selector: 'app-root',
@@ -37,9 +34,9 @@ export class AppComponent {
   private readonly breakpointService = inject(BreakpointService);
 
   private readonly isBelowResponsiveBreakpoint =
-    this.breakpointService.isBelowBreakpoint(RESPONSIVE_BREAKPOINT);
+    this.breakpointService.isBelowBreakpoint(BreakpointCategory.MEDIUM);
 
-  sideNavMode = computed<'side' | 'over'>(() =>
+  sideNavMode = computed<MatDrawerMode>(() =>
     this.isBelowResponsiveBreakpoint() ? 'over' : 'side',
   );
   isSideNavOpen = computed(() => !this.isBelowResponsiveBreakpoint());
